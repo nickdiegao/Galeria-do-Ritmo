@@ -1,0 +1,147 @@
+.galeria {
+  padding: 2rem 1rem;
+}
+
+.galeria-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.galeria-header img {
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.galeria-header h1 {
+  font-size: 1.8rem;
+  color: #0b2a4a;
+  position: relative;
+}
+
+.galeria-header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d4af37;
+  margin: 0.75rem auto 0;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.galeria-grid img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+}
+
+.galeria-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.lightbox-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  cursor: zoom-out;
+
+  transform: scale(0.92);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-open img {
+  transform: scale(1);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-btn:hover {
+  opacity: 1;
+}
+
+.nav-btn.left {
+  left: 1rem;
+}
+
+.nav-btn.right {
+  right: 1rem;
+}
+
+.nav-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-btn {
+    font-size: 3.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .galeria {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .galeria-header img {
+    height: 180px;
+  }
+}
