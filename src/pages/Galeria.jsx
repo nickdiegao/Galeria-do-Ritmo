@@ -79,22 +79,41 @@ function Galeria() {
       </section>
 
       {/* Lightbox */}
-      <div
-        className={`lightbox ${imagemIndex !== null ? 'lightbox-open' : ''}`}
-        onClick={fechar}
-      >
-        {imagemIndex !== null && (
-            <>
-                <button className="nav-btn left" onClick={anterior}>
-                    ‹
-                </button>
-                <img src={imagens[imagemIndex]} alt="" />
-                <button className="nav-btn right" onClick={proxima}>
-                    ›
-                </button>     
-            </>
-        )}
-      </div>
+        <div
+          className={`lightbox ${imagemIndex !== null ? 'lightbox-open' : ''}`}
+          onClick={(e) => {
+            if (imagemIndex === null) return
+
+            const largura = window.innerWidth
+            const cliqueX = e.clientX
+
+            // Clique no centro (fecha)
+            if (cliqueX > largura * 0.35 && cliqueX < largura * 0.65) {
+              setImagemIndex(null)
+              return
+            }
+
+            // Clique à esquerda (anterior)
+            if (cliqueX < largura / 2 && imagemIndex > 0) {
+              setImagemIndex(imagemIndex - 1)
+              return
+            }
+
+            // Clique à direita (próxima)
+            if (cliqueX > largura / 2 && imagemIndex < imagens.length - 1) {
+              setImagemIndex(imagemIndex + 1)
+            }
+          }}
+        >
+          {imagemIndex !== null && (
+            <img
+              src={imagens[imagemIndex]}
+              alt=""
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
+        </div>
+
     </main>
   )
 }
