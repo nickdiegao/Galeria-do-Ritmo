@@ -91,8 +91,9 @@
   color: #ffffff;
   cursor: pointer;
   padding: 1rem;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 0.2s ease;
+  z-index: 1001;
   outline: none;
   box-shadow: none;
 }
@@ -127,6 +128,16 @@
   .nav-btn {
     font-size: 3.5rem;
     padding: 1.5rem;
+  }
+
+  .nav-btn.left {
+    left: 0.5rem;
+    left: calc(env(safe-area-inset-left) + 0.5rem);
+  }
+
+  .nav-btn.right {
+    right: 0.5rem;
+    right: calc(env(safe-area-inset-right) + 0.5rem);
   }
 }
 
