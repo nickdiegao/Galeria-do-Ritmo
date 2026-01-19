@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './Header.css'
+import {Link} from 'react-router-dom'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  
 
   return (
     <header className="header">
@@ -26,10 +25,11 @@ function Header() {
 
         {/* Desktop menu */}
         <nav className="nav desktop">
-          <a href="#">História</a>
+          <Link to="/">Home</Link>
+          <Link to="/historia">História</Link>
           <a href="#">Diretoria</a>
           <a href="#">Ações</a>
-          <a href="#">Galeria</a>
+          <Link to="/galeria">Galeria</Link>
           <a href="#">Playlist</a>
           <a href="#">Organograma</a>
           <a href="#">Links</a>
@@ -48,13 +48,14 @@ function Header() {
             </button>
 
             <nav className="mobile-nav">
-                <a onClick={() => setMenuOpen(false)} href="#">História</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Diretoria</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Ações</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Galeria</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Playlist</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Organograma</a>
-                <a onClick={() => setMenuOpen(false)} href="#">Links</a>
+                <Link onClick={() => setMenuOpen(false)} to="/">Home</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/historia">História</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/diretoria">Diretoria</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/acoes">Ações</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/galeria">Galeria</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/playlist">Playlist</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/organograma">Organograma</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/links">Links</Link>
             </nav>
             </div>
         </div>
