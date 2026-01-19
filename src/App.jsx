@@ -8,21 +8,20 @@ import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <div className="app">
       <Header />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/galeria' element={<Galeria />} />
-        <Route path='/historia' element={<Historia />} />
-      </Routes>
-
+      <main className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/historia" element={<Historia />} />
+          <Route path="/galeria" element={<Galeria />} />
+        </Routes>
+      </main>
 
       <Footer />
-    </>
+    </div>
   )
 }
 
