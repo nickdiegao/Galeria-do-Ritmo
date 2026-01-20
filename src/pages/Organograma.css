@@ -1,0 +1,43 @@
+.organograma {
+  padding: 2rem 1rem;
+}
+
+.organograma-header {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.organograma-header h1 {
+  font-size: 2rem;
+  color: #0b2a4a;
+  position: relative;
+}
+
+.organograma-header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d4af37;
+  margin: 0.75rem auto 0;
+}
+
+.organograma-header p {
+  margin-top: 1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.organograma-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #1f2937;
+}
+
+@media (min-width: 768px) {
+  .organograma-header h1 {
+    font-size: 2.4rem;
+  }
+}

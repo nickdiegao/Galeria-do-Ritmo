@@ -27,12 +27,12 @@ function Header() {
         <nav className="nav desktop">
           <Link to="/">Home</Link>
           <Link to="/historia">História</Link>
-          <a href="#">Diretoria</a>
-          <a href="#">Ações</a>
+          <Link to="/diretoria">Diretoria</Link>
+          <Link to="/acoes">Ações</Link>
           <Link to="/galeria">Galeria</Link>
-          <a href="#">Playlist</a>
-          <a href="#">Organograma</a>
-          <a href="#">Links</a>
+          <Link to="/playlist">Playlist</Link>
+          <Link to="/organograma">Organograma</Link>
+          <Link to="/links">Links</Link>
         </nav>
       </div>
 
